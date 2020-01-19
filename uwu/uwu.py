@@ -248,20 +248,23 @@ class uwu(commands.Cog, IDConverter):
         #Others
 
     @commands.command()
-    async def pat(self, ctx, member: discord.Member):
+    async def kiss(self, ctx, member: discord.Member):
+        fauth = ctx.message.author.id
+        auth = f'<@!{fauth}>'
+        match = self._get_id_match(member) or re.match(member)
         guild = ctx.guild
         msg = rand(self.patm)
         #Variables
-        if member == discord.Member:
+        if member == auth:
             await ctx.send('A-are you feeling lonely? ;c')
             return False
-        if member != discord.Member:
+        if member != auth:
             pass
-        if discord.Member is None:
+        if match is None:
             await ctx.send(f':x: **{member}** is not in the server, please use the correct syntax | [p]pat <member>')
             return False
         if guild:
-            patbed = discord.Embed(description=msg.format(mem=member), color=discord.Color(rand(self.clist)))
+            patbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
             patbed.set_image(url=rand(self.patg))
             await ctx.send(embed=patbed)
         #Message Sending
