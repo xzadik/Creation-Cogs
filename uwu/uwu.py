@@ -257,7 +257,7 @@ class uwu(commands.Cog, IDConverter):
             return False
         if member != discord.Member:
             pass
-        if match is None:
+        if discord.Member is None:
             await ctx.send(f':x: **{member}** is not in the server, please use the correct syntax | [p]pat <member>')
             return False
         if guild:
