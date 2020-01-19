@@ -252,10 +252,10 @@ class uwu(commands.Cog, IDConverter):
         guild = ctx.guild
         msg = rand(self.patm)
         #Variables
-        if member == auth:
+        if member == discord.Member:
             await ctx.send('A-are you feeling lonely? ;c')
             return False
-        if member != auth:
+        if member != discord.Member:
             pass
         if match is None:
             await ctx.send(f':x: **{member}** is not in the server, please use the correct syntax | [p]pat <member>')
