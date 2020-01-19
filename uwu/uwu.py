@@ -248,9 +248,9 @@ class uwu(commands.Cog, IDConverter):
         #Others
 
     @commands.command()
-    async def pat(self, ctx, member: discord.Member):
+    async def pat(self, ctx, member):
         fauth = ctx.message.author.id
-        auth = f'<@!{fauth}>'
+        auth = ctx.author
         match = self._get_id_match(member) or re.match(r'<@!?([0-9]+)>$', member)
         guild = ctx.guild
         msg = rand(self.patm)
@@ -264,7 +264,7 @@ class uwu(commands.Cog, IDConverter):
             await ctx.send(f':x: **{member}** is not in the server, please use the correct syntax | [p]pat <member>')
             return False
         if guild:
-            patbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
+            patbed = discord.Embed(description=msg.format(mem=member, auth=ctx.author), color=discord.Color(rand(self.clist)))
             patbed.set_image(url=rand(self.patg))
             await ctx.send(embed=patbed)
         #Message Sending
