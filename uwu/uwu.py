@@ -248,10 +248,7 @@ class uwu(commands.Cog, IDConverter):
         #Others
 
     @commands.command()
-    async def pat(self, ctx, member):
-        fauth = ctx.message.author.id
-        auth = f'<@!{fauth}>'
-        match = self._get_id_match(member) or re.match(r'<@!?([0-9]+)>$', member)
+    async def pat(self, ctx, member: discord.Member):
         guild = ctx.guild
         msg = rand(self.patm)
         #Variables
