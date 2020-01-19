@@ -267,6 +267,8 @@ class uwu(commands.Cog, IDConverter):
             patbed = discord.Embed(description=msg.format(mem=member, auth=ctx.author), color=discord.Color(rand(self.clist)))
             patbed.set_image(url=rand(self.patg))
             await ctx.send(embed=patbed)
+        except Exception as error:
+            raise(error)
         #Message Sending
 
     @commands.command()
