@@ -261,7 +261,7 @@ class uwu(commands.Cog, IDConverter):
             await ctx.send(f':x: **{member}** is not in the server, please use the correct syntax | [p]pat <member>')
             return False
         if guild:
-            patbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
+            patbed = discord.Embed(description=msg.format(mem=member), color=discord.Color(rand(self.clist)))
             patbed.set_image(url=rand(self.patg))
             await ctx.send(embed=patbed)
         #Message Sending
