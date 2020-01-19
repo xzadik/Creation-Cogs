@@ -251,7 +251,7 @@ class uwu(commands.Cog, IDConverter):
     async def kiss(self, ctx, member: discord.Member):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
-        match = self._get_id_match(member) or re.match(member)
+        match = self._get_id_match(member) or re.match(r'<@!?([0-9]+)>$', member)
         guild = ctx.guild
         msg = rand(self.patm)
         #Variables
