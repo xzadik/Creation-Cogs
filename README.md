@@ -1,5 +1,5 @@
 # Creation-Cogs (Devs)
-<img src="https://i.imgur.com/ZVzEEVO.png">
+<img src="https://i.imgur.com/lPd3lrF.png">
 
 Made with Python and [RED](https://github.com/Cog-Creators/Red-DiscordBot).
 
