@@ -1,0 +1,9 @@
+{
+    "author" : ["Cog Creations Lab | 1clapch33k5#8049"],
+    "install_msg" : "Thank you for installing my UwU Cog.",
+    "name" : "UwU",
+    "short" : "Kiss, Pat, and Smile at other members!",
+    "description" : "Show your affection to other member.",
+    "tags" : ["Fun", "Anime", "Kawaii", "Gif"],
+    "min_python_version": [3, 6, 0]
+}
