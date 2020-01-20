@@ -253,6 +253,7 @@ class uwu(commands.Cog, IDConverter):
             return await ctx.send("A-are you feeling lonely? ;c")
         else:
             patbed = discord.Embed(
+            description=msg.format(mem=member)
                 color=discord.Color(rand(self.clist)))
             content=rand(self.patm)
             patbed.set_image(url=rand(self.patg))
