@@ -254,7 +254,7 @@ class uwu(commands.Cog, IDConverter):
         else:
             patbed = discord.Embed(
                 color=discord.Color(rand(self.clist)))
-                description=rand(self.patm)
+            description=rand(self.patm)
             patbed.set_image(url=rand(self.patg))
             await ctx.send(embed=patbed)
         #Message Sending
