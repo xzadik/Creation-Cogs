@@ -248,11 +248,10 @@ class uwu(commands.Cog, IDConverter):
         #Others
 
         self.config = Config.get_conf(self, identifier=95932766180343808, force_registration=True)
-        self.config.register_global(**defaults)
-        self.config.register_guild(**defaults)
-        self.config.register_member(**defaults_member)
-        self.config.register_user(**defaults_member)  
-        
+        self.config.register_global
+        self.config.register_guild
+        self.config.register_member
+        self.config.register_user
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def pat(self, ctx, member: discord.Member):
