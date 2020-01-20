@@ -251,7 +251,7 @@ class uwu(commands.Cog, IDConverter):
     async def pat(self, ctx, member: discord.Member.mention):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
-        member = f'<@ID>
+        member = <@ID>
         msg = rand(self.patm)
         if member == auth:
             return await ctx.send("A-are you feeling lonely? ;c")
