@@ -249,14 +249,15 @@ class uwu(commands.Cog, IDConverter):
 
     @commands.command()
     async def pat(self, ctx, member: discord.Member):
+        msg = rand(self.kissm)
         if member == ctx.author:
             return await ctx.send("A-are you feeling lonely? ;c")
         else:
             patbed = discord.Embed(
-            description=msg.format(mem=member)
-                color=discord.Color(rand(self.clist)))
-            content=rand(self.patm)
-            patbed.set_image(url=rand(self.patg))
+            description=msg
+                color=discord.Color(rand(self.clist))),
+                description=msg),
+                patbed.set_image(url=rand(self.patg))
             await ctx.send(embed=patbed)
         #Message Sending
 
