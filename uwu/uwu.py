@@ -248,7 +248,6 @@ class uwu(commands.Cog, IDConverter):
         #Others
 
     @commands.command()
-    @commands.bot_has_permissions(embed_links=True)
     async def pat(self, ctx, member: discord.Member):
         if member == ctx.author:
             return await ctx.send("A-are you feeling lonely? ;c")
