@@ -252,7 +252,7 @@ class uwu(commands.Cog, IDConverter):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         msg = rand(self.patm)
-        if member == auth:
+        if member == ctx.author:
             return await ctx.send("A-are you feeling lonely? ;c")
         else:
             patbed = discord.Embed(description=msg.format(mem=member.mention, auth=auth), color=discord.Color(rand(self.clist)))
