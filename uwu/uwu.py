@@ -255,7 +255,7 @@ class uwu(commands.Cog, IDConverter):
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def pat(self, ctx, member: discord.Member):
-        if user == ctx.author:
+        if member == ctx.author:
             return await ctx.send("A-are you feeling lonely? ;c")
         else:
             patbed = discord.Embed(description=msg.format(mem=member, auth=ctx.author), color=discord.Color(rand(self.clist)))
