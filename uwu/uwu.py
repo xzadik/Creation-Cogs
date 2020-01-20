@@ -248,14 +248,14 @@ class uwu(commands.Cog, IDConverter):
         #Others
 
     @commands.command()
-    async def pat(self, ctx, member: discord.Member.mention):
+    async def pat(self, ctx, member: discord.Member):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         msg = rand(self.patm)
         if member == auth:
             return await ctx.send("A-are you feeling lonely? ;c")
         else:
-            patbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
+            patbed = discord.Embed(description=msg.format(mem=member.mention, auth=auth), color=discord.Color(rand(self.clist)))
             patbed.set_image(url=rand(self.patg))
             await ctx.send(embed=patbed)
         #Message Sending
