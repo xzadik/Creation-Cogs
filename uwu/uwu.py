@@ -253,10 +253,10 @@ class uwu(commands.Cog, IDConverter):
         if member == ctx.author:
             return await ctx.send("A-are you feeling lonely? ;c")
         else:
-            embed = discord.Embed(
+            patbed = discord.Embed(
                 color=discord.Color(rand(self.clist)))
-                patbed.set_image(url=rand(self.patg))
-                await ctx.send(embed=patbed)
+            patbed.set_image(url=rand(self.patg))
+            await ctx.send(embed=patbed)
         #Message Sending
 
     @commands.command()
