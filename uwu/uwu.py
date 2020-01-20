@@ -33,10 +33,10 @@ patg = [
 ]
 
 patm = [
-    "{auth} pats {mem} on the head ^-^",
-    "{auth} pattie cakes {mem}s head 0-0",
-    "{mem} gets a lucky 'ol pat on the head from {auth} UwU",
-    "{mem} recieves a pat from {auth} =-=",
+    "**{auth}** pats **{mem}** on the head ^-^",
+    "**{auth}** pattie cakes **{mem}’s** head 0-0",
+    "**{mem}** gets a lucky 'ol pat on the head from **{auth}** UwU",
+    "**{mem}** recieves a pat from **{auth}** =-=",
 ]
 
 kissg = [
@@ -249,13 +249,12 @@ class uwu(commands.Cog, IDConverter):
 
     @commands.command()
     async def pat(self, ctx, member: discord.Member):
-        fauth = ctx.message.author.id
-        auth = f'<@!{fauth}>'
+        auth = ctx.author
         msg = rand(self.patm)
         if member == ctx.author:
             return await ctx.send("A-are you feeling lonely? ;c")
         else:
-            patbed = discord.Embed(description=msg.format(mem=member.mention, auth=auth), color=discord.Color(rand(self.clist)))
+            patbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
             patbed.set_image(url=rand(self.patg))
             await ctx.send(embed=patbed)
         #Message Sending
