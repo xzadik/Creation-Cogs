@@ -248,7 +248,7 @@ class uwu(commands.Cog, IDConverter):
         #Others
 
     @commands.command()
-    async def pat(self, ctx, member: discord.Member,member: discord.Member, member.id ):
+    async def pat(self, ctx, member: discord.Member,member: discord.Member.mention):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         msg = rand(self.patm)
