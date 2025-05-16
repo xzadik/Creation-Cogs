@@ -17,7 +17,7 @@ class RainbowHue(commands.Cog):
     @commands.command()
     @commands.is_owner()
     @is_guild_owner()
-    async def rainbowstart(self, ctx, *, role_name: str):
+    async def rainbowset(self, ctx, *, role_name: str):
         """Start a hue-based rainbow gradient on a role."""
         guild = ctx.guild
         role = discord.utils.get(guild.roles, name=role_name)
