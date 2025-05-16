@@ -4,9 +4,11 @@ import discord
 import asyncio
 import colorsys
 
-def is_guild_owner():
+def is_owner_or_guild_owner():
     async def predicate(ctx):
-        return ctx.guild is not None and ctx.author == ctx.guild.owner
+        is_bot_owner = await commands.is_owner().predicate(ctx)
+        is_server_owner = ctx.guild is not None and ctx.author == ctx.guild.owner
+        return is_bot_owner or is_server_owner
     return commands.check(predicate)
 
 class RainbowHue(commands.Cog):
@@ -14,9 +16,8 @@ class RainbowHue(commands.Cog):
         self.bot = bot
         self.guild_loops = {}
 
-    @commands.command()
-    @commands.is_owner()
-    @is_guild_owner()
+    @commands.command(name="rainbowset")
+    @is_owner_or_guild_owner()
     async def rainbowset(self, ctx, *, role_name: str):
         """Start a hue-based rainbow gradient on a role."""
         guild = ctx.guild
@@ -35,9 +36,8 @@ class RainbowHue(commands.Cog):
         loop.start()
         await ctx.send(f"🌈 Started rainbow hue shift on `{role.name}`.")
 
-    @commands.command()
-    @commands.is_owner()
-    @is_guild_owner()
+    @commands.command(name="rainbowstop")
+    @is_owner_or_guild_owner()
     async def rainbowstop(self, ctx):
         """Stop the rainbow hue effect."""
         guild_id = ctx.guild.id
