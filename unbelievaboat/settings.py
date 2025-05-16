@@ -122,13 +122,17 @@ class SettingsMixin(MixinMeta):
             failrates[job] = amount
         await ctx.tick()
 
+
     @check_global_setting_admin()
     @commands.guild_only()
     @unb_set.command(name="fine-rate", usage="<min | max> <amount>", aliases=["finerate"])
-    async def fine_set(self, ctx, min_or_max: str, amount: int):
-        """Set the min or max fine rate for crimes."""
+    async def fine_set(self, ctx, min_or_max: str, amount: float):
+        """Set the min or max fine rate for crimes. (e.g. 0.03 = 3%)"""
         if min_or_max not in ["max", "min"]:
             return await ctx.send("You must choose between min or max.")
+        if amount <= 0 or amount > 1:
+            return await ctx.send("Fine percentage must be between 0.01 and 1.0 (1% to 100%).")
+    
         conf = await self.configglobalcheck(ctx)
         async with conf.fines() as fines:
             fines[min_or_max] = amount
