@@ -6,10 +6,14 @@ import colorsys
 
 def is_owner_or_guild_owner():
     async def predicate(ctx):
-        is_bot_owner = await commands.is_owner().predicate(ctx)
-        is_server_owner = ctx.guild is not None and ctx.author == ctx.guild.owner
-        return is_bot_owner or is_server_owner
+        try:
+            if await ctx.bot.is_owner(ctx.author):
+                return True
+        except Exception:
+            pass
+        return ctx.guild and ctx.author == ctx.guild.owner
     return commands.check(predicate)
+
 
 class RainbowHue(commands.Cog):
     def __init__(self, bot):
