@@ -1,5 +1,4 @@
-from .rainbow import rainbow
+from .rainbow import RainbowHue
 
 async def setup(bot):
-    await bot.add_cog(rainbow(bot))
-
+    await bot.add_cog(RainbowHue(bot))
