@@ -1,0 +1,9 @@
+{
+    "author" : ["Cog Creations Lab | 1clapch33k5#8049"],
+    "install_msg" : "Thank you for installing **iClapCheek's** Rainbow Role Cog.",
+    "name" : "(c)Rain",
+    "short" : "Create a role and rainbow away!",
+    "description" : "Make a role change colors in a beautiful rainbowy gradient.",
+    "tags" : ["Rainbow", "Role", "RB", "Fun"],
+    "min_python_version": [3, 6, 0]
+}
