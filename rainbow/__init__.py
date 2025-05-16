@@ -1,4 +1,4 @@
 from .rainbow import rainbow
 
-def setup(bot):
-  bot.add_cog(rainbow())
+async def setup(bot):
+    await bot.add_cog(rainbow())
