@@ -6,15 +6,12 @@ import colorsys
 
 def is_owner_or_guild_owner():
     async def predicate(ctx):
-        try:
-            if await ctx.bot.is_owner(ctx.author):
+        if ctx.guild is not None:
+            if ctx.author.id == ctx.guild.owner_id:
                 return True
-        except Exception:
-            pass
-        return ctx.guild and ctx.author == ctx.guild.owner
+        return await ctx.bot.is_owner(ctx.author)
     return commands.check(predicate)
-
-
+    
 class RainbowHue(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -42,7 +39,7 @@ class RainbowHue(commands.Cog):
 
     @commands.command(name="rainbowstop")
     @is_owner_or_guild_owner()
-    async def rainbowstop(self, ctx):
+    async def rainbowset(self, ctx, *, role_name: str):
         """Stop the rainbow hue effect."""
         guild_id = ctx.guild.id
         if guild_id in self.guild_loops:
